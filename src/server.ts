@@ -12,8 +12,8 @@ app.use(express.json());
 app.use("/", router);
 
 // 404 + Error handlers
-//app.use(notFound);
-//app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 // Config
 const PORT = Number(process.env.PORT ?? 3000);

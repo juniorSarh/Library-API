@@ -41,7 +41,7 @@ export function deleteAuthor(req: Request, res: typeof response, _next: NextFunc
     const index = authors.findIndex((a) => a.id === id);
     if (index !== -1) {
         authors.splice(index, 1);
-        res.status(204).send();
+        res.status(200).json({message: "author deleted successfully"});
     } else {
         res.status(404).json({ error: "Author not found" });
     }

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import authorRouter from "./routes/authorRoute";
-//import health from "./health.js";
+
 
 const router = Router();
 
@@ -8,6 +8,7 @@ router.get("/", (_req, res) => {
   res.json({message: "Welcome to Library API" });
 });
 
-router.use("/author", authorRouter);
-
+// This is where we add the routes to the main router
+router.use("/author", authorRouter); //getting author routes
+// router.use("/book", bookRouter); //getting book routes
 export default router;
